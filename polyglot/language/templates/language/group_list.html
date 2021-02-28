@@ -1,0 +1,31 @@
+{% extends 'language/index.html' %}
+
+{% block content %}
+    
+    <div class='centerstage-1'>
+        <h4>Groups</h4>
+        <a class='btn btn-primary' href="{% url 'new_group' pk=group.pk %}">
+            <button>New Group</button>
+        </a>
+        {% for groups in object_list %}
+        <div class="card">
+            <div class="card-body">
+            <a href="{% url 'group_content' %}">
+                <h2>{{ groups.name }}</h2>        
+            </a>
+            <ul>
+                {% for user in groups.users.all %}
+            <li>{{ user.name }}</li>
+                {% endfor %}          
+            </ul>
+            <a class='btn btn-success' href="">
+                <button>Join</button>
+            </a>
+            <a class='btn btn-danger' href="">
+                <button>Delete</button>
+            </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'language/index.html' %}
+
+{% block content %}
+
+<div class='form'>
+    <h1>New group</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type='submit' class='save btn btn-default'>Save</button>
+    </form>
+</div>
+  
+{% endblock %}
