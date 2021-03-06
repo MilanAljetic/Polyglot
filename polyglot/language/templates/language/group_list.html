@@ -4,7 +4,7 @@
     
     <div class='centerstage-1'>
         <h4>Groups</h4>
-        <a class='btn btn-primary' href="{% url 'new_group' pk=group.pk %}">
+        <a class='btn btn-primary' href="{% url 'new_group' %}">
             <button>New Group</button>
         </a>
         {% for groups in object_list %}

@@ -1,0 +1,28 @@
+{% extends 'language/index.html' %}
+
+{% block content %}
+    
+   
+    <div class='centerstage-1'>
+        <h4>Posts</h4>
+        
+        {% for posts in object_list %}
+        <div class="card">
+            <div class="card-body">
+            
+            
+            <p>Author: {{ posts.author.name }}</p> 
+            <p>_________________</p>
+            <h4>{{ posts.text }}</h4>
+            <p>{{ posts.published_date }}</p>       
+            </div>
+        </div>
+        {% endfor %}
+        <div class="col-auto">
+        <a href="{% url 'new_post' %}">
+            <button type="submit" class="btn btn-primary mb-2">New post</button>
+        </a>
+        </div>
+    </div>
+
+{% endblock %}
